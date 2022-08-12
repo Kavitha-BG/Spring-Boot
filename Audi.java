@@ -1,5 +1,8 @@
 package com.example.spring;
 
+import org.springframework.stereotype.Component;
+
+@Component("audi")
 public class Audi implements Car{
 	
 	private RocketEngine rocketEngine;
