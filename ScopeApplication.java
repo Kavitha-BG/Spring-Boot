@@ -3,14 +3,13 @@ package com.spring.bean;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
+import org.springframework.context.annotation.ComponentScan;
 
-import com.spring.bean.scope.SomeCdiBusiness;
+import com.spring.bean.scope.PersonDAO;
 
-//import com.example.demo.BinarySearchImpl;
-//import com.example.demo.MyApplication;
-@SpringBootApplication
+//@SpringBootApplication
+@ComponentScan
 public class ScopeApplication {
 
 
@@ -25,10 +24,10 @@ public class ScopeApplication {
 				SpringApplication.run(ScopeApplication.class, args);
 		
 		
-		SomeCdiBusiness personDao = 
-				applicationContext.getBean(SomeCdiBusiness.class);
-		SomeCdiBusiness personDAO2 = 
-				applicationContext.getBean(SomeCdiBusiness.class);
+		PersonDAO personDao = 
+				applicationContext.getBean(PersonDAO.class);
+		PersonDAO personDAO2 = 
+				applicationContext.getBean(PersonDAO.class);
 		
 		LOGGER.info("{}",personDao);
 		LOGGER.info("{}",personDao.getJdbcConnection());

@@ -3,14 +3,13 @@ package com.spring.bean;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.ComponentScan;
 
-import com.spring.bean.scope.SomeCdiBusiness;
+import com.spring.bean.scope.PersonDAO;
 
-@SpringBootApplication
-@ComponentScan("com.spring.bean")
+//@SpringBootApplication
+@ComponentScan
 public class ComponentScanApplication {
 
 
@@ -23,11 +22,11 @@ public class ComponentScanApplication {
 				SpringApplication.run(ComponentScanApplication.class, args);
 		
 		
-		SomeCdiBusiness componentDao = 
-				applicationContext.getBean(SomeCdiBusiness.class);
+		PersonDAO componentDao = 
+				applicationContext.getBean(PersonDAO.class);
 		
 		LOGGER.info("{}",componentDao);
-		
+		System.out.println("this is ComponentScanApplication ");
 	}
 
 }

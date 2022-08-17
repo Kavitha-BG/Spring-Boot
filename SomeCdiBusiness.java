@@ -1,21 +1,23 @@
-package com.spring.bean.scope;
+package com.spring.bean.cdi;
+
+import javax.inject.Inject;
+import javax.inject.Named;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-@Component
+@Named
 public class SomeCdiBusiness {
 	
-	@Autowired
-	JdbcConnection jdbcConnection;
+	@Inject
+	SomeCdiDao cdiDao;
 
-	public JdbcConnection getJdbcConnection() {
-		return jdbcConnection;
+	public SomeCdiDao getSomeCDIDAO() {
+		return cdiDao;
 	}
 
-	public void setJdbcConnection(JdbcConnection jdbcConnection) {
-		this.jdbcConnection = jdbcConnection;
+	public void setSomeCDIDAO(SomeCdiDao someCdiDao) {
+		this.cdiDao = someCdiDao;
 	}
-	
 	
 }
